@@ -23,6 +23,9 @@ namespace DotNetCoreApp.ViewModels
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long. Contain a Number and a Character.", MinimumLength = 10)]
         public string Password { get; set; }
 
+        [Required]
+        public string channelId { get; set; }
+
     }
     public class UserLoginModel
     {
