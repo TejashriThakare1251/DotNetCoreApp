@@ -58,6 +58,8 @@ namespace DotNetCoreApp.Database
 
                 entity.ToTable("tblUserRegsitration");
 
+                entity.Property(e => e.ChannelId).HasMaxLength(50);
+
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.Email).HasMaxLength(50);
@@ -69,12 +71,6 @@ namespace DotNetCoreApp.Database
                 entity.Property(e => e.Password).HasMaxLength(50);
 
                 entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
-
-                entity.HasOne(d => d.GenderNavigation)
-                    .WithMany(p => p.TblUserRegsitrations)
-                    .HasForeignKey(d => d.Gender)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblUserRegsitration_tblGender");
             });
 
             OnModelCreatingPartial(modelBuilder);

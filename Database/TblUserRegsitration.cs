@@ -20,8 +20,8 @@ namespace DotNetCoreApp.Database
         public DateTime CreatedOn { get; set; }
         public int UpdatedBy { get; set; }
         public DateTime UpdatedOn { get; set; }
+        public string? ChannelId { get; set; }
 
-        public virtual TblGender GenderNavigation { get; set; } = null!;
         public virtual ICollection<TblSetEvent> TblSetEvents { get; set; }
     }
 }

@@ -28,6 +28,9 @@ namespace DotNetCoreApp.ViewModels
 
         [Required]
         public DateTime Time { get; set; }
+
+        [Required]
+        public string channelId { get; set; }
     }
     public class EventEditViewModel
     {
@@ -45,5 +48,8 @@ namespace DotNetCoreApp.ViewModels
 
         [Required]
         public DateTime Time { get; set; }
+
+        [Required]
+        public string channelId { get; set; }
     }
 }
